@@ -4,11 +4,12 @@ import { HeaderComponentComponent } from './components/header-component/header-c
 import { CurrencyConverterComponent } from './components/currency-converter/currency-converter.component';
 import { IfRenderComponent } from './components/if-render/if-render.component';
 import { CurrencySelectorComponent } from './components/currency-selector/currency-selector.component';
+import { ResultDisplayComponent } from './components/result-display/result-display.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponentComponent, CurrencyConverterComponent, IfRenderComponent, CurrencySelectorComponent],
+  imports: [RouterOutlet, HeaderComponentComponent, CurrencyConverterComponent, IfRenderComponent, CurrencySelectorComponent, ResultDisplayComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
