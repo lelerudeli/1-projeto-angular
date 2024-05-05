@@ -9,9 +9,18 @@ import { Component } from '@angular/core';
   styleUrl: './currency-selector.component.css'
 })
 export class CurrencySelectorComponent {
-  show: boolean = false
+  
+  options!: string
+  selectedOption!: string 
+
+  selectOption(option: string): void {
+    this.selectedOption = option;
+  
+}
+  
+  /*show: boolean = false
 
   showMessage():void{
     this.show = !this.show; //toggle  
-  }
+  }*/
 }

@@ -1,13 +1,17 @@
 <div class="form-container">
-    <form action="#" method="post">
-        <div class="textbox">
-            <span>Valor</span>
-            <input type="text" name="input" value="$$$">
-        </div>      
-
-        <div class="conversion">
-            <input type="submit" name="button submit" id="button-submit" value="converter">
-        </div>
+    <form [formGroup]="formulario" (ngSubmit)="Converter()">
+        <div class="formGroup">
+            <div class="textbox">
+                <label for="valor"> Valor </label>
+                <input type="number" name="input" placeholder="$$$" formControlName="valor">
+            </div>   
+            
+            <app-currency-selector></app-currency-selector>
+    
+            <div class="button-submit">
+                <input type="submit" name="button submit" id="button-submit" value="converter">
+            </div>
+        </div>        
     </form> 
 </div>
 
