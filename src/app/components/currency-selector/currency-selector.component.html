@@ -1,15 +1,15 @@
     <div class="selection">
         <div class="dropdown" id="1">
-            <label for="moeda"> Moeda </label>
-                <select name="moeda" id="moeda" formControlName="moedaDe"> 
+            <label for="moeda"> Moeda de Origem </label>
+                <select name="moeda" id="moeda" [(ngModel)]="moedaDe"> 
                     <option value="BRL" > Real </option>
                     <option value="USD" > Dólar </option>
                 </select>
         </div>
     
         <div class="dropdown" id="2">
-            <label for="moeda"> Moeda </label>
-                <select name="moeda" id="moeda" formControlName="moedaPara"> 
+            <label for="moeda"> Moeda de Destino </label>
+                <select name="moeda" id="moeda" [(ngModel)]="moedaPara"> 
                     <option value="BRL" > Real </option>
                     <option value="USD" > Dólar </option>
                 </select>
