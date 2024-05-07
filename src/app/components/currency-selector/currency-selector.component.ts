@@ -13,8 +13,8 @@ import { CurrencyConverterService } from '../../service/currency-converter.servi
 })
 export class CurrencySelectorComponent { 
 
-  @Input() moedaDe : string =''
-  @Input() moedaPara : string =''
+  @Input() moedaFrom : string =''
+  @Input() moedaTo : string =''
 
   constructor(private currencyConverterService: CurrencyConverterService) {}
 

@@ -2,15 +2,17 @@
     <form [formGroup]="formulario" (ngSubmit)="Converter()">
         <div class="formGroup">
             <div class="textbox">
-                <label for="valor"> Valor </label>
-                <input type="number" name="input" placeholder="$$$" formControlName="valor">
+                <label for="amount"> Valor </label>
+                <input type="number" name="amount" placeholder="$$$" formControlName="amount">
             </div>   
             
-            <app-currency-selector></app-currency-selector>
+            <app-currency-selector [moedaFrom]="this.formulario.moedaFrom" [moedaTo]="this.formulario.moedaTo">  </app-currency-selector>
     
             <div class="button-submit">
-                <input type="submit" name="button submit" id="button-submit" value="converter">
+                <input type="submit" name="btn-submit" value="converter">
             </div>
         </div>        
     </form> 
 </div>
+
+<!-- -->

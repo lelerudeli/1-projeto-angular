@@ -16,25 +16,28 @@ export class CurrencyConverterComponent implements OnInit{
   
   formulario: any;
   verValorConvertido!: boolean;
-  
+ 
 
   constructor (private currencyConverterService: CurrencyConverterService){
     this.formulario = new FormGroup({
-      valor: new FormControl(),
-      moedaDe : new FormControl() ,
-      moedaPara : new FormControl()
+      amount: new FormControl(),
+      moedaFrom : new FormControl() ,
+      moedaTo : new FormControl()
     })
   }
 
   ngOnInit(): void {
-   this.currencyConverterService.convertCurrency('USD', 'BRL', 1).subscribe(result => {
-    console.log(result)
-   })
    this.verValorConvertido = false;
   }
 
   Converter() : void {
-    console.log(this.formulario.value)
+    const valor = this.formulario.value.amount
+    const from = this.formulario.value.moedaFrom
+    const to = this.formulario.value.moedaTo
+
+    this.currencyConverterService.convertCurrency('BRL', 'USD', valor).subscribe(result => {
+      console.log(result)
+     })
     }
   }
 
