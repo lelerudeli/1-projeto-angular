@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { CurrencyConverterComponent } from '../currency-converter/currency-converter.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { ConversorService } from '../../service/conversor.service';
+import { CurrencyConverterService } from '../../service/currency-converter.service';
 
 @Component({
   selector: 'app-currency-selector',
@@ -13,18 +13,10 @@ import { ConversorService } from '../../service/conversor.service';
 })
 export class CurrencySelectorComponent { 
 
-  moedaDe : string ='BRL'
-  moedaPara : string ='USD'
+  @Input() moedaDe : string =''
+  @Input() moedaPara : string =''
 
-  constructor(private currencyService: ConversorService) {}
-
-  selecionarMoedaDe(moeda: string) {
-    this.currencyService.setMoedaDe(moeda);
-  }
-
-  selecionarMoedaPara(moeda: string) {
-    this.currencyService.setMoedaPara(moeda);
-  }
+  constructor(private currencyConverterService: CurrencyConverterService) {}
 
 
   /*show: boolean = false

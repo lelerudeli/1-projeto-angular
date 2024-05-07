@@ -1,19 +1,22 @@
     <div class="selection">
         <div class="dropdown" id="1">
-            <label for="moeda"> Moeda de Origem </label>
-                <select name="moeda" id="moeda" [(ngModel)]="moedaDe"> 
-                    <option value="BRL" > Real </option>
-                    <option value="USD" > Dólar </option>
+            <label for="tipo-moeda"> Moeda de Origem </label>
+                <select name="tipo-moeda" id="moeda" placeholder="Real" [(ngModel)]="moedaDe"> 
+                    <option name="moedaDe" value="BRL" > Real </option>
+                    <option name="moedaDe" value="USD" > Dólar </option>
                 </select>
         </div>
     
         <div class="dropdown" id="2">
-            <label for="moeda"> Moeda de Destino </label>
-                <select name="moeda" id="moeda" [(ngModel)]="moedaPara"> 
-                    <option value="BRL" > Real </option>
-                    <option value="USD" > Dólar </option>
+            <label for="tipo-moeda"> Moeda de Destino </label>
+                <select name="tipo-moeda" id="moeda" placeholder="Dólar" [(ngModel)]="moedaPara"> 
+                    <option name="moedaPara" value="BRL" > Real </option>
+                    <option name="moedaPara" value="USD" > Dólar </option>
                 </select>
         </div>
+
+        <p> a moeda de origem é {{moedaDe}}</p>
+        <p> a moeda de destino é {{moedaPara}}</p>
     </div>
 
 <!--<div class="class">

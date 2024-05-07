@@ -1,36 +1,36 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule, FormGroup } from '@angular/forms';
+import { CurrencyConverterService } from '../../service/currency-converter.service';
 import { CurrencySelectorComponent } from '../currency-selector/currency-selector.component';
-import { ConversorService } from '../../service/conversor.service';
+
 
 
 @Component({
   selector: 'app-currency-converter',
   standalone: true,
-  imports: [CurrencySelectorComponent, 
-    ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CurrencySelectorComponent],
   templateUrl: './currency-converter.component.html',
   styleUrl: './currency-converter.component.css'
 })
 export class CurrencyConverterComponent implements OnInit{
-  /*@Input() name: string =''; //dado filho 
-  @Input() data!: {email:string, tel: number}*/
-
+  
   formulario: any;
   verValorConvertido!: boolean;
+  
 
-  constructor (private currencyService: ConversorService){
+  constructor (private currencyConverterService: CurrencyConverterService){
     this.formulario = new FormGroup({
       valor: new FormControl(),
-      moedaDe : new FormControl(),
+      moedaDe : new FormControl() ,
       moedaPara : new FormControl()
     })
   }
 
   ngOnInit(): void {
-    this.verValorConvertido = false;
-    this.currencyService.setMoedaDe('BRL');
-    this.currencyService.setMoedaPara('USD');
+   this.currencyConverterService.convertCurrency('USD', 'BRL', 1).subscribe(result => {
+    console.log(result)
+   })
+   this.verValorConvertido = false;
   }
 
   Converter() : void {
