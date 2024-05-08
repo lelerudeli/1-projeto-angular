@@ -1,3 +1,28 @@
 .form-container{
-    padding: 125px 0px 0px;
+    padding-top: 10em;
+    display:flex;
+    justify-content: center;
+    
+    
+}
+
+form{
+    width: 80%; 
+    padding: 2%;
+    background-color: #9afa95;
+
+    border-radius: 30px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    color:#0e2e1c;
+
+}
+
+.input-valor{
+    display: flex;
+    flex-direction: column;
+    
 }

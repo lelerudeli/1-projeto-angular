@@ -19,12 +19,5 @@ import { ResultDisplayComponent } from './components/result-display/result-displ
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  userName = "Leticia"; //dado pai 
 
-  userData = {
-    email: "letíciarudeli11@gmail.com",
-    tel: 989999518 
-  }
-
-  title = 'Conversor Moedas';
 }

@@ -13,6 +13,7 @@ export class CurrencyConverterService {
 
   constructor(private http: HttpClient) { }
 
+  //criando função para conversão utilizando api externa
   convertCurrency(from: string, to: string, amount: number): Observable<any>{
 
     const url = `${this.apiUrl}?from=${from}&to=${to}&amount=${amount}&api_key=${this.apiKey}`;

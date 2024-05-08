@@ -9,15 +9,6 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponentComponent {
 
-  name: string = "lele"
-  age: number = 30
-  job = "programadora"
-  hobbies = ['ler', 'cantar', 'cozinhar']
-  car = {
-    name: "argo",
-    year: 2023
-  }
-
-  constructor(){  }
+  title: string = 'Conversor de Moedas'
 
 }

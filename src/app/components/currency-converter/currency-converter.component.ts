@@ -1,8 +1,7 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, ViewChild } from '@angular/core';
 import { FormControl, ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { CurrencyConverterService } from '../../service/currency-converter.service';
 import { CurrencySelectorComponent } from '../currency-selector/currency-selector.component';
-
 
 
 @Component({
@@ -16,38 +15,32 @@ export class CurrencyConverterComponent implements OnInit{
   
   formulario: any; 
 
+  //recebendo os valores do select 
+  @ViewChild(CurrencySelectorComponent) moedaFrom!: CurrencySelectorComponent
+  @ViewChild(CurrencySelectorComponent) moedaTo!: CurrencySelectorComponent
+
+              //inicializando service para podemos utilizar ele nessa classe
   constructor (private currencyConverterService: CurrencyConverterService){
-    this.formulario = new FormGroup({
-      amount: new FormControl(),
-      moedaFrom : new FormControl() ,
-      moedaTo : new FormControl()
+    this.formulario = new FormGroup({ //inicializando meu formulario
+      amount: new FormControl() 
     })
   }
 
   ngOnInit(): void {
-  }
-
-  receivingOrigin(moedaFrom:any){
-    console.log(moedaFrom)
-  }
-
-  receivingDestination(moedaFrom:any){
-    console.log(moedaFrom)
-  }
-
-  Converter() : void {
-    const valor = this.formulario.value.amount
-    const from = this.formulario.value.moedaFrom
-    const to = this.formulario.value.moedaTo
-
-    this.currencyConverterService.convertCurrency('BRL', 'USD', valor).subscribe(result => {
-      console.log(result)
       
+  }
+
+  convert() : void {
+    //passando todos os valores de conversão para variáveis locais
+    const valor = this.formulario.value.amount
+    const from = this.moedaFrom
+    const to = this.moedaTo
+
+    //passando variaveis para a função do service (que usa api externa para realizar conversão)
+    this.currencyConverterService.convertCurrency(from.moedaFrom, to.moedaTo, valor).subscribe(result => {
+      console.log(result)
      })
-    
-    console.log(this.formulario.value)
     }
   }
-
   
 
