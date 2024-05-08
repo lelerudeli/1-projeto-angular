@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input} from '@angular/core';
+import { Component, EventEmitter, Output} from '@angular/core';
 import { CurrencyConverterComponent } from '../currency-converter/currency-converter.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CurrencyConverterService } from '../../service/currency-converter.service';
@@ -13,10 +13,11 @@ import { CurrencyConverterService } from '../../service/currency-converter.servi
 })
 export class CurrencySelectorComponent { 
 
-  @Input() moedaFrom : string =''
-  @Input() moedaTo : string =''
+ @Output() moedaFrom = new EventEmitter
+ @Output() moedaTo = new EventEmitter
 
   constructor(private currencyConverterService: CurrencyConverterService) {}
+
 
 
   /*show: boolean = false

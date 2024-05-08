@@ -6,7 +6,7 @@
                 <input type="number" name="amount" placeholder="$$$" formControlName="amount">
             </div>   
             
-            <app-currency-selector [moedaFrom]="this.formulario.moedaFrom" [moedaTo]="this.formulario.moedaTo">  </app-currency-selector>
+            <app-currency-selector (moedaFrom)="receivingOrigin($event)" (moedaTo)="receivingDestination($event)"> </app-currency-selector>
     
             <div class="button-submit">
                 <input type="submit" name="btn-submit" value="converter">

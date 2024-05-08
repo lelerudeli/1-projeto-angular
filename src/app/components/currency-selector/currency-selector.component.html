@@ -1,7 +1,7 @@
     <div class="selection">
         <div class="dropdown" id="1">
             <label for="tipo-moeda"> Moeda de Origem </label>
-                <select name="tipo-moeda" id="moeda" placeholder="Real" [(ngModel)]="moedaFrom"> 
+                <select name="tipo-moeda" id="moeda" placeholder="Real" [(ngModel)]=" moedaFrom">
                     <option name="moedaFrom" value="BRL" > Real </option>
                     <option name="moedaFrom" value="USD" > Dólar </option>
                 </select>
@@ -9,15 +9,21 @@
     
         <div class="dropdown" id="2">
             <label for="tipo-moeda"> Moeda de Destino </label>
-                <select name="tipo-moeda" id="moeda" placeholder="Dólar" [(ngModel)]="moedaTo"> 
+                <select name="tipo-moeda" id="moeda" placeholder="Dólar" [ngModel]="moedaTo"> 
                     <option name="moedaTo" value="BRL" > Real </option>
                     <option name="moedaTo" value="USD" > Dólar </option>
                 </select>
         </div>
 
+        
+
     </div>
 
 <!--<div class="class">
+
+     (change)="onSelectFrom($event.target.value)"
+
+
     <p *ngIf="show">Exibindo mensagem!</p>
     <button (click)="showMessage()">Clique em mim!</button> -- botao com evento 
 </div> -->
