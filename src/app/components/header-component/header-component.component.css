@@ -6,7 +6,7 @@
     align-items: center;
     gap: 10px;
     position: fixed;
-    width: 100%;
+    width: 100vw;
 }
 
 .title {

@@ -1,5 +1,24 @@
-select{
-    width: 5em;
+.selection{
+    display: flex;
+    flex-direction: row; 
+    width: 80%;
+}
+
+.selection .dropdowns{
     display: flex;
     flex-direction: row;
+    gap:65px;
 }
+
+.dropdown{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 12em;   
+}
+
+.dropdown label{
+    margin-left: 12px;
+}
+
+

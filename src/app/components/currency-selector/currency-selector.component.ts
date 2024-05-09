@@ -12,8 +12,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 })
 export class CurrencySelectorComponent { 
 
-  moedaFrom! : string;
-  moedaTo! : string;
+  moedaFrom : string = 'BRL';
+  moedaTo: string = 'USD';
 
 
   /*SwapCurrencies():void{

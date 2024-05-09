@@ -39,6 +39,8 @@ export class CurrencyConverterComponent implements OnInit{
     //passando variaveis para a função do service (que usa api externa para realizar conversão)
     this.currencyConverterService.convertCurrency(from.moedaFrom, to.moedaTo, valor).subscribe(result => {
       console.log(result)
+      console.log(result.result.rate)
+      console.log(result.result.moedaTo)
      })
     }
   }

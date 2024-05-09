@@ -2,16 +2,16 @@
     <form [formGroup]="formulario" >
         <div class="form-group">
             <div class="input-amount">
-                <label for="amount"> Valor </label>
-                <input type="number" name="amount" placeholder=" $$$" formControlName="amount">
+                <label for="amount"> Valor: </label>
+                <input type="number" name="amount" placeholder="  $$$  " formControlName="amount">
             </div>   
             
             <app-currency-selector > </app-currency-selector>
-        </div>
-    
-        <div class="button-submit">
-            <input type="submit" name="btn-submit" value="converter" (click)="convert()">
-        </div>
-       
-    </form> 
+        </div>       
+     
+    <div class="button-submit">
+        <input type="submit" name="btn-submit" value="converter" (click)="convert()">
+    </div>
+
+    </form>
 </div>

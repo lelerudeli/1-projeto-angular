@@ -1,5 +1,4 @@
 import { Component, OnInit, Input} from '@angular/core';
-import { CurrencyConverterService } from '../../service/currency-converter.service';
 import { CurrencyConverterComponent } from '../currency-converter/currency-converter.component';
 
 @Component({

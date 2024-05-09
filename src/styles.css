@@ -3,7 +3,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: Lexend; 
+    font-family: Lexend;
 }
 
 body{
@@ -11,7 +11,70 @@ body{
     background-color: #efffee;
 }
 
-.class{
-    border-bottom: 1px solid red;
-    padding: 2em;
+form{
+    width: 80%; 
+    padding: 3%;
+    background-color: var(--light-green);
+    border-radius: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    color: var(--dark-green);
+
+}
+
+.input-amount input{
+    border:#0e2e1c solid 2px;
+    border-radius: 50px;
+    width: 15em;
+    height: 35px;
+
+    background-color: var(--bg-color-inputs);
+}
+
+.input-amount input:hover{
+    background-color: var(--bg-color);
+    cursor: pointer;
+}
+    
+select{
+    font-size: 16px;
+    background-color: var(--bg-color-inputs);
+    height: 40px;
+
+    border: var(--dark-green) solid 2px;
+    border-radius: 50px;
+}
+
+select:hover{
+    background-color: var(--bg-color);
+    cursor: pointer;
+}
+
+option{
+    background-color: var(--bg-color-inputs);
+    border: var(--dark-green);
+    padding:2px;
+}
+
+
+
+/*VARIVAVEIS*/
+:root{
+
+     /*font*/
+    --font-lexend: Lexend;
+
+    /*col*/
+    --dark-green: #0e2e1c;
+    --medium-green: #58C852;
+    --light-green: #9afa95;
+    --bg-color-inputs: #c9fdc6;
+    --bg-color: #efffee;
+    
+
+    --grid-gap: 24px;
+    --column-count: 5;
+
 }
