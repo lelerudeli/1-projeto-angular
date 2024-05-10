@@ -42,14 +42,18 @@ export class CurrencyConverterComponent implements OnInit{
     const to = this.moedaTo
 
     //passando variaveis para a função do service (que usa api externa para realizar conversão)
-    this.currencyConverterService.convertCurrency(from.moedaFrom, to.moedaTo, valor).subscribe(result => {
-      console.log(result)
+    this.currencyConverterService.convertCurrency(from.moedaFrom, to.moedaTo, valor).subscribe(response => {
+      console.log(response)
       
-      result = Number ((valor * result.rates).toFixed(2))
+      const valorConvertido = (valor * response.result.rate).toFixed(2)
+      console.log(valorConvertido)
 
-      console.log(result)
      })
     }
   }
   
+
+  /*console.log(response.result.to)
+  console.log(response.result.moedato)
+  console.log(response.result.to.moedaTo*/
 
