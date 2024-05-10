@@ -1,28 +1,26 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, ViewChild} from '@angular/core';
 import { CurrencyConverterComponent } from '../currency-converter/currency-converter.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-result-display',
   standalone: true,
-  imports: [CurrencyConverterComponent],
+  imports: [CurrencyConverterComponent, CommonModule],
   templateUrl: './result-display.component.html',
   styleUrl: './result-display.component.css'
 })
-export class ResultDisplayComponent implements OnInit {
+export class ResultDisplayComponent  {
 
-  @Input()
-  receiveResult!: number;
+  viewResult: boolean = false;
+  @ViewChild(CurrencyConverterComponent) result!: CurrencyConverterComponent;
 
   constructor () { }
 
 
-  ngOnInit(): void {
-  
-  }
-  
   showResult(){
-    console.log(this.receiveResult)
-    
+    this.viewResult = true;
+    const conversionResult = this.result;
+
   }
 
 }

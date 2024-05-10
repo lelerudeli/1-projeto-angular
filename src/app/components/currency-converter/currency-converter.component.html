@@ -1,17 +1,24 @@
 <div class="form-container">
-    <form [formGroup]="formulario" >
-        <div class="form-group">
-            <div class="input-amount">
-                <label for="amount"> Valor: </label>
-                <input type="number" name="amount" placeholder="  $$$  " formControlName="amount">
-            </div>   
-            
-            <app-currency-selector > </app-currency-selector>
-        </div>       
-     
-    <div class="button-submit">
-        <input type="submit" name="btn-submit" value="converter" (click)="convert()">
-    </div>
+        <form [formGroup]="formulario" >
+            <div class="form-group">
+                <div class="inputs">
+                    <div class="input-amount">
+                        <label for="amount"> Valor: </label>
+                        <input type="number" name="amount" placeholder="  $$$  " formControlName="amount">
+                    </div>   
+                    
+                    <app-currency-selector> </app-currency-selector>
+                    
+                </div>
 
-    </form>
+                <div class="button-submit">
+                    <button type="submit" name="btn-btn" (click)="convert()" [attr.typeBtn]="typeBtn"> {{textButton}} </button>
+                </div>
+            </div> 
+
+            <div class="result-display">
+                <app-result-display> </app-result-display>
+            </div>
+
+        </form>
 </div>

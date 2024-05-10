@@ -1,19 +1,24 @@
-import { Component, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { FormControl, ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { CurrencyConverterService } from '../../service/currency-converter.service';
 import { CurrencySelectorComponent } from '../currency-selector/currency-selector.component';
+import { ResultDisplayComponent } from '../result-display/result-display.component';
 
 
 @Component({
   selector: 'app-currency-converter',
   standalone: true,
-  imports: [ReactiveFormsModule, CurrencySelectorComponent],
+  imports: [ReactiveFormsModule, CurrencySelectorComponent, ResultDisplayComponent, ResultDisplayComponent],
   templateUrl: './currency-converter.component.html',
   styleUrl: './currency-converter.component.css'
 })
 export class CurrencyConverterComponent implements OnInit{
   
   formulario: any; 
+
+  //botão para reutilização, basta colocar @Input e chamar ele no html
+ @Input() textButton: string = ''
+ @Input() typeBtn!: 'solid-primary' | 'solid-secondary'
 
   //recebendo os valores do select 
   @ViewChild(CurrencySelectorComponent) moedaFrom!: CurrencySelectorComponent
@@ -39,8 +44,10 @@ export class CurrencyConverterComponent implements OnInit{
     //passando variaveis para a função do service (que usa api externa para realizar conversão)
     this.currencyConverterService.convertCurrency(from.moedaFrom, to.moedaTo, valor).subscribe(result => {
       console.log(result)
-      console.log(result.result.rate)
-      console.log(result.result.moedaTo)
+      
+      result = Number ((valor * result.rates).toFixed(2))
+
+      console.log(result)
      })
     }
   }

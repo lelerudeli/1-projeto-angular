@@ -10,8 +10,18 @@
 
 .form-group{
     display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.form-group .inputs{
+    display: flex;
     flex-direction: row; 
     justify-content: space-around;
+}
+
+form .result-display{
+    margin-left: 450px;
 }
 
 .input-amount{
@@ -20,4 +30,22 @@
     gap: 5px;
 }
 
+:host{
+    button{
+        border: #0e2e1c solid 2px;
+        padding: 10px;
+        border-radius: 30px;
+    }
 
+    button[typeBtn='solid-primary']{
+        background-color: #58C852;
+        color: #0e2e1c;
+        font-weight: 500;
+        font-size: 20px;
+        margin-left: 3em;
+    }
+
+    button[typeBtn='solid-secondary']{
+        background-color: aquamarine;
+    }
+}
