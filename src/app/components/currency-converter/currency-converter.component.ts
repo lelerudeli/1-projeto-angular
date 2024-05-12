@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { FormControl, ReactiveFormsModule, FormGroup } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, FormGroup, Validators } from '@angular/forms';
 import { CurrencyConverterService } from '../../service/currency-converter.service';
 import { CurrencySelectorComponent } from '../currency-selector/currency-selector.component';
 import { ResultDisplayComponent } from '../result-display/result-display.component';
@@ -15,6 +15,7 @@ import { ResultDisplayComponent } from '../result-display/result-display.compone
 export class CurrencyConverterComponent implements OnInit{
   
   formulario: any; 
+  conversionResult! : any;
 
   //botão para reutilização, basta colocar @Input e chamar ele no html
  @Input() textButton: string = ''
@@ -27,7 +28,7 @@ export class CurrencyConverterComponent implements OnInit{
               //inicializando service para podemos utilizar ele nessa classe
   constructor (private currencyConverterService: CurrencyConverterService){
     this.formulario = new FormGroup({ //inicializando meu formulario
-      amount: new FormControl() 
+      amount: new FormControl(Validators.required) 
     })
   }
 
@@ -45,9 +46,7 @@ export class CurrencyConverterComponent implements OnInit{
     this.currencyConverterService.convertCurrency(from.moedaFrom, to.moedaTo, valor).subscribe(response => {
       console.log(response)
       
-      const valorConvertido = (valor * response.result.rate).toFixed(2)
-      console.log(valorConvertido)
-
+      this.conversionResult = (valor * response.result.rate).toFixed(2)
      })
     }
   }
