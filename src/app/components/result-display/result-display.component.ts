@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ResultDisplayComponent  {
 
+  //importando lá do componente CurrencyConverter 
   @Input() viewResult!: boolean
   @Input() conversionResult! : number;
 

@@ -24,6 +24,7 @@ export class CurrencyConverterComponent {
   @ViewChild(CurrencySelectorComponent) moedaFrom!: CurrencySelectorComponent;
   @ViewChild(CurrencySelectorComponent) moedaTo!: CurrencySelectorComponent;
 
+  //variaveis que serão importadas na componente de resultado
   conversionResult! : any;
   viewResult!: boolean;
 

@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 
 export class CurrencyConverterService {
 
+  //criando variaveis para o link da api
   private apiUrl = 'https://api.fastforex.io/convert';
   private apiKey = 'b018b43b00-c4b1e2f799-sdeecl';
 
@@ -22,6 +23,7 @@ export class CurrencyConverterService {
     return this.http.get<any>(url);
   }
 }
+
 
 /* retornando um objeto observável que, quando inscrito (ou seja, quando você chama o método .subscribe() nele), 
 irá disparar uma requisição HTTP GET para o URL especificado. (para preencher os valores)

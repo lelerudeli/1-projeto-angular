@@ -14,6 +14,7 @@ import { SelectItem } from 'primeng/api';
 })
 export class CurrencySelectorComponent { 
 
+  //variaveis do ViewChild
   moedaFrom : string = 'BRL';
   moedaTo: string = 'USD';
 
