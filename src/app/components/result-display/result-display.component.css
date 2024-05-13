@@ -10,3 +10,23 @@
 .show-result  hr{
     border-color: #0e2e1c;
 }
+
+@media screen and (max-width: 430px) {
+
+    .show-result{
+        width: min-content;
+        font-size: 30px;
+    }
+
+    .show-result p{
+        display: flex;
+        justify-content: center;
+        align-items:end;
+    }
+
+    .show-result span{
+        font-size: 32px;
+        margin-left: 8px;
+    }
+    
+}

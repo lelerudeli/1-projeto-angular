@@ -21,4 +21,16 @@
     margin-left: 12px;
 }
 
+@media screen and (max-width: 430px) {
+
+    .selection{
+        flex-direction: column;
+    }
+
+    .selection .dropdowns{
+        flex-direction: column;
+        gap: 20px;
+    }
+   
+}
 

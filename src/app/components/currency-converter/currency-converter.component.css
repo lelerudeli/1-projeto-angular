@@ -21,7 +21,10 @@
 }
 
 form .result-display{
-    margin-left: 450px;
+    width: fit-content;
+    display: flex;
+    justify-content: end;
+    margin-left: 450px;    
 }
 
 .input-amount{
@@ -53,4 +56,38 @@ form .result-display{
     button[typeBtn='solid-secondary']{
         background-color: aquamarine;
     }
+}
+
+/*MEDIA QUERYS*/
+
+@media screen and (max-width: 430px) {
+
+    .form-container{  
+        padding-top: 7em; 
+        font-size: 22px; 
+    }
+
+    .form-group{
+        align-items: center;
+        gap: 25px;
+    }
+
+    .form-group .inputs{
+        padding: 10px 0px;
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    form .result-display{
+        justify-content: start; 
+        margin-left: 0px; 
+    }
+
+:host{
+        button[typeBtn='solid-primary']{
+            font-size: 18px;
+            margin-left: 0;
+        }
+    }
+   
 }
