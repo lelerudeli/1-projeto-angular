@@ -3,16 +3,22 @@
             <div class="dropdown" id="moedaFrom" >
                 <label for="tipo-moeda"> Moeda de Origem: </label>
                     <select name="tipo-moeda" [(ngModel)]=" moedaFrom">
-                        <option name="moedaFrom" value="BRL" >  Real </option>
-                        <option name="moedaFrom" value="USD" >  Dólar </option>
+                        <option value="BRL" >  Real </option>
+                        <option value="USD" >  Dólar EUA</option>
+                        <option value="EUR" >  Euro </option>
+                        <option value="GBP" >  Libra Esterlina </option>
+                        <option value="CAD" >  Dólar Canadense </option>
                     </select>
             </div>
     
             <div class="dropdown" id="moedaTo">
                 <label for="tipo-moeda"> Moeda de Destino: </label>
                     <select name="tipo-moeda" [(ngModel)]="moedaTo"> 
-                        <option name="moedaTo" value="BRL" >  Real </option>
-                        <option name="moedaTo" value="USD" >  Dólar </option>
+                        <option value="BRL" >  Real </option>
+                        <option value="USD" >  Dólar </option>
+                        <option value="EUR" >  Euro </option>
+                        <option value="GBP" >  Libra Esterlina </option>
+                        <option value="CAD" >  Dólar Canadense </option>
                     </select>
             </div>
         </div>      

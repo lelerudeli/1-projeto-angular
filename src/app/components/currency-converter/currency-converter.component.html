@@ -4,7 +4,7 @@
                 <div class="inputs">
                     <div class="input-amount">
                         <label for="amount"> Valor: </label>
-                        <input type="number" name="amount" placeholder="  $$$  " formControlName="amount">
+                        <input type="number" name="amount" placeholder="$$$" formControlName="amount">
                     </div>   
                     
                     <app-currency-selector> </app-currency-selector>
@@ -12,12 +12,13 @@
                 </div>
 
                 <div class="button-submit">
-                    <button type="submit" name="btn-btn" (click)="convert()" [attr.typeBtn]="typeBtn"> {{textButton}} </button>
+                    <button type="submit" name="btn-btn" (click)="convert()" 
+                    [attr.typeBtn]="typeBtn" [disabled]="!formulario.valid"> {{textButton}} </button>
                 </div>
             </div> 
 
             <div class="result-display">
-                <app-result-display [conversionResult]="conversionResult"> </app-result-display>
+                <app-result-display [conversionResult]="conversionResult" [viewResult]="viewResult"> </app-result-display>
             </div>
 
         </form>

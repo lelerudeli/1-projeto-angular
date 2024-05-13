@@ -43,6 +43,11 @@ form .result-display{
         font-weight: 500;
         font-size: 20px;
         margin-left: 3em;
+
+        &:hover{
+            background-color: rgb(88, 200, 82, 0.6);
+            cursor: pointer;
+        }
     }
 
     button[typeBtn='solid-secondary']{

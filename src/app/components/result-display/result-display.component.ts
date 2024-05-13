@@ -11,14 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ResultDisplayComponent  {
 
-  viewResult: boolean = false;
+  @Input() viewResult!: boolean
   @Input() conversionResult! : number;
-
-  constructor () { }
-
-
-  showResult(){
-    this.viewResult = true;
-  }
 
 }

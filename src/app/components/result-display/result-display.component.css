@@ -1,4 +1,12 @@
 .show-result{
-    width:fit-content;
+    width: fit-content;
     font-size: 45px;
+}
+
+.show-result span{
+    font-weight: 700;
+}
+
+.show-result  hr{
+    border-color: #0e2e1c;
 }

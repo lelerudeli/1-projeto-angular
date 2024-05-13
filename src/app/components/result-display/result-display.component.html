@@ -1,4 +1,6 @@
 
-<div class="show-result" >
-    <P> Valor convertido: <span> {{conversionResult}}</span> <hr> 
+<div class="show-result">
+    @if (viewResult) {
+    <P> Valor convertido: <span> {{conversionResult}} </span> <hr> 
+    }
 </div>

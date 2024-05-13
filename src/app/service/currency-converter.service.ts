@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class CurrencyConverterService {
 
   private apiUrl = 'https://api.fastforex.io/convert';
-  private apiKey = 'fb65731cb8-297001f286-sd4cu9';
+  private apiKey = 'b018b43b00-c4b1e2f799-sdeecl';
 
   constructor(private http: HttpClient) { }
 
